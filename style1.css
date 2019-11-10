@@ -1,0 +1,29 @@
+body
+{
+	background-image: url(wall/7276.jpg);
+	height:100vh;
+	background-size: cover;
+	background-position: center;
+	color: #FF0000;
+	background-repeat: fixed;
+}
+#ff
+{
+height: 200px;
+width: 200px;
+border-radius: 200px;
+}
+.lang
+{
+   text-align: center;
+}
+button
+{
+  text-align: center;
+  background-color: #FFFF00;
+  width: 240px;
+  height: 60px;
+  border:2px solid #338033;
+  border-radius: 20px;
+
+}

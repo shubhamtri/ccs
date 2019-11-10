@@ -1,0 +1,64 @@
+
+
+<html>
+
+    <head>
+
+    <title>Login page</title>
+    <link rel="stylesheet" href="formstyle.css">
+    <script type="text/javascript">
+    function validate()
+    {
+            var uname = document.getElementById("uname");
+            var password = document.getElementById("pass");
+            var username = document.getElementById("uname").value;
+            var regx=/[a-z]@vedicare.com/;
+            if(regx.test(username))
+            {
+                 if(password.value=="ishaan")
+                    {
+    
+                        return true;
+                    }
+                else
+                {       alert("Entered password is wrong");
+                         return false;
+                }           
+            }
+            else
+            {
+                uname.style.border="solid 3px red";
+                document.getElementById("lbuser").style.visibility="visible";
+                return false;
+            }
+           
+            
+            
+    }
+        </script>
+
+    </head>
+
+    <body>
+        <div class="login-page">
+            <div class="form"> 
+
+                <form class="login-page"onsubmit="return validate();" action="b.php?q">
+
+                    <input id="uname" placeholder="user name" type="text" required/>
+
+                    <label id ="lbuser" style ="color : red;visibility: hidden;">INVALID</label>   
+
+                    <br><br>
+
+                    <input type ="password" id ="pass" placeholder = "password" required/>
+                    <br><br>
+                    <button type="submit">Login</button>
+
+                 </form> 
+             </div>  
+        </div>  
+
+    </body>
+
+</html>

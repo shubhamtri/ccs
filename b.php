@@ -1,0 +1,80 @@
+<?php 
+include("a.php");
+error_reporting(0);
+?>
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title>FORM</title>
+        <link rel="stylesheet"  href="stylex.css">
+    </head>
+    <body>
+        <div class="form-page">
+            <div class="form">
+
+    <form method="GET" enctype="application/x-www-form-urlencoded" action="">
+
+    <p>
+    <label>Name
+    <input type="text" name="name" required>    
+    </label> 
+    </p>
+
+    <p>
+    <label>Age
+    <input type="Age" name="Age" value="">
+    </label>
+    </p>
+    <p>
+    <label> Date
+    <input type="date" name="Date" value="" required>
+    </label>
+    </p>
+<fieldset>
+<legend>Gender</legend>
+<p><label> <input type="radio" name="Gender" required value="male"> MALE </label></p>
+<p><label> <input type="radio" name="Gender" required value="female"> FEMALE </label></p>
+<p><label> <input type="radio" name="Gender" required value="others"> Others </label></p>
+</fieldset>
+<p>
+<label>Medical Condition
+<input name="Medical" type="text" value="" required>
+</label>
+</p>
+<label>Medication Provided
+    <input name="Medication" type="text" value="" required>
+    </label>
+    </p>
+
+<p><button type="submit" name="submit">Submit</button></p>
+
+
+</form>
+    </div>  
+        </div>
+    </body>
+</html>
+<?php
+if($_GET['submit'] && !isset($_GET['q']))
+{
+	if($name!="" && $age!="" && $date!="" && $gender!="" && $Medical!="" && $Medical1!="")
+    {
+        
+    }
+	else{
+		  echo "All Fields Are Required";
+	}
+}
+$name=$_GET['name'];
+$age=$_GET['Age'];
+$date=$_GET['Date'];
+$gender=$_GET['Gender'];
+$Medical=$_GET['Medical'];
+$Medical1=$_GET['Medication'];
+$query= "INSERT INTO ABHI VALUES ('$name','$age','$date','$gender','$Medical','$Medical1')";
+        $data=mysqli_query($conn, $query);
+        if($data)
+        {
+            echo "your data has been submitted succesfully";
+        }
+?>
